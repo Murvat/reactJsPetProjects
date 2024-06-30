@@ -1,32 +1,43 @@
+/* Global styles */
 * {
     padding: 0;
     margin: 0;
     font-size: 25px;
 }
 
+/* Container styling */
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 500px;
 }
 
-
+/* Input styling */
 .input-1res {
     border: 5px outset #242424;
     border-radius: 33%;
     margin: 5px;
 }
 
+/* Button styling */
 .btn {
     padding: 5px;
     border-radius: 12px;
     width: 150px;
     background-color: steelblue;
+    color: white;
+    /* Added color for better visibility */
 }
 
-;
-
+/* Output styling */
 .output {
     color: red;
+    font-size: 20px;
+    border: 5px solid black;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    /* Added margin for better spacing */
 }

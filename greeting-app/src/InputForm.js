@@ -1,31 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import './app.css'
 
 const InputForm = (props) => {
+    const [inputValue, setInputValue] = useState(props.value || '');
+    const [output, setOutput] = useState('');
 
     const submitHandler = (e) => {
         e.preventDefault();
-        let out = document.querySelector('.output');
-        let inputVal = document.querySelector('.input-1res').value;
-        for (let item of props.data) {
-            if (item.name === inputVal && item.age > 18) {
-                out.textContent = 'Hello';
-                return
-            };
+        if (inputValue === 'add name...') {
+            setOutput('Please ADD NAME');
+            return;
         }
-        out.textContent = 'You are too young';
-
-
+        for (let item of props.data) {
+            if (item.name === inputValue && item.age > 18) {
+                setOutput('You are welcome');
+                return;
+            }
+        }
+        setOutput('You are too young');
     };
+
+    const inputChangeHandler = (e) => {
+        setInputValue(e.target.value);
+    };
+
     return (
-        <>
-            <form action="submitting data">
+        <div className="container">
+            <form onSubmit={submitHandler}>
                 <label htmlFor="inputName">
-                    <input type="text" className='input-1res' name="inputName" defaultValue={props.value} />
-                    <button className="btn" onClick={submitHandler}>Click</button>
+                    <input
+                        type="text"
+                        className='input-1res'
+                        name="inputName"
+                        value={inputValue}
+                        onChange={inputChangeHandler}
+                    />
                 </label>
+                <button type="submit" className="btn">Click</button>
             </form>
-            <div className="output"></div>
-        </>)
+            <div className="output">{output}</div>
+
+        </div>
+    );
 };
+
 export default InputForm;
