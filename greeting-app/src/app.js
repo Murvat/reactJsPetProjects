@@ -7,7 +7,7 @@ const App = () => {
 
     return (
         < div className="container" >
-            <InputForm data={usersArr} value='add name...' />
+            <InputForm data={usersArr} />
         </div >
     )
 };

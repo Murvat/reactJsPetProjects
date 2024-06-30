@@ -2,22 +2,24 @@ import React, { useState } from "react";
 import './app.css'
 
 const InputForm = (props) => {
-    const [inputValue, setInputValue] = useState(props.value || '');
+    const [inputValue, setInputValue] = useState('');
     const [output, setOutput] = useState('');
 
     const submitHandler = (e) => {
         e.preventDefault();
-        if (inputValue === 'add name...') {
-            setOutput('Please ADD NAME');
+
+        if (inputValue === '') {
+            setOutput('Please add Name!!!')
             return;
-        }
+        };
+
         for (let item of props.data) {
             if (item.name === inputValue && item.age > 18) {
-                setOutput('You are welcome');
+                setOutput('You are welcome!!!');
                 return;
             }
         }
-        setOutput('You are too young');
+        setOutput('You are too young,sorry!!!');
     };
 
     const inputChangeHandler = (e) => {
