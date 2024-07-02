@@ -1,0 +1,22 @@
+{
+    "option1": {
+        "color": "red",
+        "backgroundColor": "lightRed"
+    },
+    "option2": {
+        "color": "white",
+        "backgroundColor": "lightWhite"
+    },
+    "option3": {
+        "color": "blue",
+        "backgroundColor": "lightBlue"
+    },
+    "option4": {
+        "color": "green",
+        "backgroundColor": "lightGreen"
+    },
+    "option5": {
+        "color": "yellow",
+        "backgroundColor": "lightYellow"
+    }
+}
