@@ -5,7 +5,8 @@ function App() {
   return (
     <div className='container'>
       <div className="calculatorUi">
-        <div className="output"></div>
+        <div className="output"><input type="text" value='' />
+        </div>
         <div className="calculatorFunctions">
           <button className='btnPlus btn'>+</button>
           <button className='btnMinus btn '>-</button>
